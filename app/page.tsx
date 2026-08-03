@@ -24,15 +24,15 @@ const MENU_ITEMS = [
 const PROMO_CARDS = [
   {
     title: "Delivering Royal Khushiyan",
-    img: "sb1.PNG",
+    img: "sb01.png",
   },
   {
     title: "Fastest Growing Premium Brand",
-    img: "sb2.PNG",
+    img: "sb02.png",
   },
   {
     title: "Made with Fresh Local Ingredients",
-    img: "sb3.PNG",
+    img: "sb03.png",
   },
 ];
 
@@ -186,7 +186,7 @@ export default function HomePage() {
               <div className="absolute top-2 w-1/3 h-5 bg-black rounded-full z-30"></div>
               <div className="relative w-full h-full bg-white">
                 <Image
-                  src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=500"
+                  src="mb.png"
                   alt="Royal Sofra App Interface"
                   fill
                   className="object-cover"
