@@ -7,8 +7,8 @@ import Footer  from "@/components/footer";
 import Link from "next/link";
 // Premium Food Image Links
 const HERO_IMAGES = [
-  "/bannerrs.png", 
   "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1800&auto=format&fit=crop", 
+  "https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1800&auto=format&fit=crop", 
   "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1800&auto=format&fit=crop", 
 ];
 
