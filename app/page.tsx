@@ -139,7 +139,7 @@ export default function HomePage() {
         {/* Hero Content */}
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 mt-10 md:mt-16 pointer-events-none">
           <span className="text-[#D4A24C] text-xs sm:text-sm font-bold tracking-[0.4em] uppercase mb-4 md:mb-6 drop-shadow-md">
-            The Crown of Fine Dining
+            Where Every Meal is Served Like Royalty.
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-light text-[#FFFDF9] tracking-tight leading-[0.95] drop-shadow-xl">
             A CULINARY <br />
