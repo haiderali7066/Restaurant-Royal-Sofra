@@ -317,7 +317,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. PROMO GRID SECTION */}
-      {/* <section className="w-full bg-[#FAF7F2] pt-40 md:pt-48 pb-16 md:pb-24 px-4 sm:px-6 lg:px-8">
+      <section className="w-full bg-[#FAF7F2] pt-40 md:pt-48 pb-16 md:pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-12 md:mb-16">
              <span className="text-[#D4A24C] text-xs font-bold tracking-[0.2em] uppercase mb-3 block">Exclusive Offers</span>
@@ -342,40 +342,9 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section> */}
-
-      {/* 3. PROMO GRID SECTION (Warm Ivory Background) */}
-
-      <section className="bg-[#FAF7F2] border-y border-[#E8DFD3]">
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            {PROMO_CARDS.map((card, index) => (
-              <div
-                key={index}
-                className="flex flex-col gap-5 group cursor-pointer"
-              >
-                <div className="w-full aspect-[4/3] sm:aspect-square relative bg-[#FFFDF9] rounded-3xl overflow-hidden shadow-sm group-hover:shadow-2xl transition-all duration-300 border border-[#E8DFD3] group-hover:border-[#D4A24C]">
-                  <Image
-                    src={card.img}
-                    alt={card.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-
-                  {/* Gold overlay hint on hover */}
-
-                  <div className="absolute inset-0 bg-[#D4A24C]/0 group-hover:bg-[#D4A24C]/10 transition-colors duration-300 z-10" />
-                </div>
-
-                <h3 className="font-bold text-xl md:text-2xl text-[#2B1B12] leading-snug group-hover:text-[#D4A24C] transition-colors px-2">
-                  {card.title}
-                </h3>
-              </div>
-            ))}
-          </div>
-        </div>
       </section>
+
+      
 
       {/* 5. FRESH INSIGHTS */}
       <section className="bg-[#FAF7F2] py-16 md:py-24">
