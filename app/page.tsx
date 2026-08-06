@@ -317,7 +317,7 @@ export default function HomePage() {
       </section>
 
       {/* 2. PROMO GRID SECTION */}
-      <section className="w-full bg-[#FAF7F2] pt-40 md:pt-48 pb-16 md:pb-24 px-4 sm:px-6 lg:px-8">
+      {/* <section className="w-full bg-[#FAF7F2] pt-40 md:pt-48 pb-16 md:pb-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-12 md:mb-16">
              <span className="text-[#D4A24C] text-xs font-bold tracking-[0.2em] uppercase mb-3 block">Exclusive Offers</span>
@@ -342,7 +342,7 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* 3. PROMO GRID SECTION (Warm Ivory Background) */}
 
