@@ -44,11 +44,17 @@ const PROMOS = [
 
 
 const MENU_CATEGORIES = [
-  { title: "Signature Handi", img: "https://images.unsplash.com/photo-1606499878233-0182ceac6f50?q=80&w=800", slug: "signature-handi" },
-  { title: "Live BBQ", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=800", slug: "bbq" },
-  { title: "Karahi Specials", img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=800", slug: "karahi" },
-  { title: "Royal Platters", img: "https://images.unsplash.com/photo-1626804475297-41607ea0af49?q=80&w=800", slug: "platters" },
-  { title: "Fresh Breads", img: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800", slug: "breads" },
+  { title: "Signature Handi", img: "https://images.unsplash.com/photo-1606499878233-0182ceac6f50?q=80&w=600", slug: "signature-handi" },
+  { title: "Live BBQ", img: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=600", slug: "bbq" },
+  { title: "Karahi Specials", img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=600", slug: "karahi" },
+  { title: "Authentic Chinese", img: "https://images.unsplash.com/photo-1541613569553-332a2574a508?q=80&w=600", slug: "chinese" },
+  { title: "Royal Platters", img: "https://images.unsplash.com/photo-1626804475297-41607ea0af49?q=80&w=600", slug: "platters" },
+  { title: "Rice & Noodles", img: "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?q=80&w=600", slug: "rice-noodles" },
+  { title: "Tandoor", img: "https://images.unsplash.com/photo-1626508035298-42284af64bb2?q=80&w=600", slug: "tandoor" },
+  { title: "Starters & Soups", img: "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=600", slug: "starters-soups" },
+  { title: "Salads & Raita", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=600", slug: "salads-raita" },
+  { title: "Desserts & Sweets", img: "https://images.unsplash.com/photo-1563805042-7684c8a9e9cb?q=80&w=600", slug: "desserts" },
+  { title: "Beverages", img: "https://images.unsplash.com/photo-1544145945-f90425340c7e?q=80&w=600", slug: "beverages" }
 ];
 
 const SIGNATURE_DISHES = [

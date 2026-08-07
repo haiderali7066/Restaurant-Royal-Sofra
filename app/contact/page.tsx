@@ -1,166 +1,129 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-import Header from "@/components/header";
+import React from "react";
+import Image from "next/image";
+import Navbar from "@/components/header";
 import Footer from "@/components/footer";
-import Whoweare from "@/components/whoweare";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.2 },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
-export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: "", phone: "", email: "", message: "" });
-      setSubmitted(false);
-    }, 3000);
-  };
-
+export default function ContactPage() {
   return (
-    <div className="bg-white text-foreground">
-      <Header />
+    <div className="min-h-screen bg-[#FFFDF9] flex flex-col font-sans">
+      <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 bg-primary text-white">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={containerVariants}
-          className="max-w-7xl mx-auto"
-        >
-          <motion.h1
-            variants={itemVariants}
-            className="text-5xl md:text-6xl font-bold mb-6"
-          >
-            Get In Touch
-          </motion.h1>
-          <motion.p
-            variants={itemVariants}
-            className="text-xl max-w-2xl leading-relaxed"
-          >
-            Have questions? We're here to help. Reach out to our team and we'll
-            respond as soon as possible.
-          </motion.p>
-        </motion.div>
-      </section>
+      <main className="flex-grow">
+        {/* Minimal Hero */}
+        <section className="bg-[#2B1B12] py-24 text-center px-4 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <Image 
+              src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&q=80&w=1920"
+              alt="Texture"
+              fill
+              className="object-cover grayscale"
+            />
+          </div>
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-serif text-[#FFFDF9] mb-4">
+              Get in <span className="italic text-[#D4A24C]">Touch</span>
+            </h1>
+            <p className="text-[#E8DFD3] text-lg font-light">
+              Whether you want to reserve a table or ask a question, we are here for you.
+            </p>
+          </div>
+        </section>
 
-      {/* Contact Cards */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="grid md:grid-cols-4 gap-6 mb-16"
-          >
-            {[
-              {
-                icon: MapPin,
-                label: "Address",
-                value:
-                  "Shop 1, Lower Ground, Building #39, Civic Centre, Bahria Town Phase 4, Islamabad, 46000",
-              },
-              { icon: Phone, label: "Landline", value: "051 2711346" },
-              { icon: Phone, label: "Phone", value: "+92 326 0341216" },
-              {
-                icon: Mail,
-                label: "Email",
-                value: "Medalign.physio@gmail.com",
-              },
-              {
-                icon: Clock,
-                label: "Hours",
-                value: [
-                  "Mon–Thu: 10AM–10PM",
-                  "Fri: 3PM–10PM",
-                  "Sat: 10AM–10PM",
-                  "Sun: Closed",
-                ],
-              },
-            ].map((contact, idx) => {
-              const Icon = contact.icon;
-              return (
-                <motion.div key={idx} variants={itemVariants}>
-                  <motion.div
-                    whileHover={{
-                      y: -8,
-                      boxShadow: "0 20px 40px rgba(45, 138, 143, 0.15)",
-                    }}
-                    className="bg-muted p-8 border border-border hover:border-primary transition-colors"
-                  >
-                    <Icon className="w-10 h-10 text-primary mb-4" />
-                    <h3 className="font-bold text-lg mb-2">{contact.label}</h3>
+        {/* Contact Content */}
+        <section className="max-w-[1200px] mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-16">
+          
+          {/* Left: Contact Form */}
+          <div className="bg-white p-8 md:p-12 rounded-3xl shadow-[0_10px_40px_-10px_rgba(43,27,18,0.08)] border border-[#E8DFD3]">
+            <h2 className="text-3xl font-serif text-[#2B1B12] mb-8">Send a Message</h2>
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-[#5C4638] uppercase tracking-wider">First Name</label>
+                  <input type="text" className="w-full bg-[#FAF7F2] border-none rounded-xl px-4 py-3 text-[#2B1B12] focus:ring-2 focus:ring-[#D4A24C] outline-none transition-all" placeholder="John" />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-[#5C4638] uppercase tracking-wider">Last Name</label>
+                  <input type="text" className="w-full bg-[#FAF7F2] border-none rounded-xl px-4 py-3 text-[#2B1B12] focus:ring-2 focus:ring-[#D4A24C] outline-none transition-all" placeholder="Doe" />
+                </div>
+              </div>
+              
+              <div className="space-y-2">
+                <label className="text-xs font-bold text-[#5C4638] uppercase tracking-wider">Email Address</label>
+                <input type="email" className="w-full bg-[#FAF7F2] border-none rounded-xl px-4 py-3 text-[#2B1B12] focus:ring-2 focus:ring-[#D4A24C] outline-none transition-all" placeholder="john@example.com" />
+              </div>
 
-                    {Array.isArray(contact.value) ? (
-                      <ul className="text-muted-foreground space-y-1">
-                        {contact.value.map((item, i) => (
-                          <li key={i}>{item}</li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="text-muted-foreground">{contact.value}</p>
-                    )}
-                  </motion.div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
+              <div className="space-y-2">
+                <label className="text-xs font-bold text-[#5C4638] uppercase tracking-wider">Message</label>
+                <textarea rows={5} className="w-full bg-[#FAF7F2] border-none rounded-xl px-4 py-3 text-[#2B1B12] focus:ring-2 focus:ring-[#D4A24C] outline-none transition-all resize-none" placeholder="How can we help you?"></textarea>
+              </div>
 
-          {/* Map */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="mb-16"
-          >
-            <h2 className="text-3xl font-bold mb-6">Find Us On Map</h2>
-            <div className="bg-muted h-96 overflow-hidden border border-border shadow-lg">
-              <iframe
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                title="Medalign Physiotherapy Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3325.1340023588605!2d73.11965407611126!3d33.54989454408803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfed9fbe14e8cd%3A0x99391c1436b63a8c!2sMedalign%20Physiotherapy!5e0!3m2!1sen!2s!4v1769694881431"
-                allowFullScreen
-                loading="lazy"
-              />
+              <button className="w-full bg-[#D4A24C] hover:bg-[#B8862B] text-white font-bold tracking-widest uppercase py-4 rounded-xl transition-colors shadow-lg shadow-[#D4A24C]/20">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+          {/* Right: Info */}
+          <div className="flex flex-col justify-center space-y-12">
+            <div>
+              <h2 className="text-3xl font-serif text-[#2B1B12] mb-8">Contact Information</h2>
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#FAF7F2] flex items-center justify-center shrink-0 text-[#D4A24C]">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#2B1B12] text-lg">Location</h3>
+                    <p className="text-[#5C4638] font-light mt-1">289 Abpara Housing Society,<br />Canal Road, Lahore, Pakistan</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#FAF7F2] flex items-center justify-center shrink-0 text-[#D4A24C]">
+                    <Phone size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#2B1B12] text-lg">Phone</h3>
+                    <p className="text-[#5C4638] font-light mt-1">0348 1118811</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#FAF7F2] flex items-center justify-center shrink-0 text-[#D4A24C]">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-[#2B1B12] text-lg">Email</h3>
+                    <p className="text-[#5C4638] font-light mt-1">info@royalsofra.com</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
 
-      <Whoweare></Whoweare>
+            <hr className="border-[#E8DFD3]" />
+
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <Clock size={24} className="text-[#D4A24C]" />
+                <h3 className="text-2xl font-serif text-[#2B1B12]">Opening Hours</h3>
+              </div>
+              <ul className="space-y-3 text-[#5C4638] font-light">
+                <li className="flex justify-between items-center pb-2 border-b border-[#FAF7F2]">
+                  <span>Monday - Thursday</span>
+                  <span className="font-medium text-[#2B1B12]">12:00 PM - 11:30 PM</span>
+                </li>
+                <li className="flex justify-between items-center pb-2 border-b border-[#FAF7F2]">
+                  <span>Friday - Sunday</span>
+                  <span className="font-medium text-[#2B1B12]">12:00 PM - 01:00 AM</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
 
       <Footer />
     </div>
