@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import WhatsAppButton from "@/components/whatsapp-button";
 import "./globals.css";
 
@@ -115,7 +114,6 @@ export default function RootLayout({
         <WhatsAppButton />
 
         {/* Vercel Analytics */}
-        <Analytics />
       </body>
     </html>
   );
